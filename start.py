@@ -50,33 +50,22 @@ if is_docker:
         sys.exit(1)
 
 else:
-    # 本地开发环境：backend是包结构
-    if parent_dir not in sys.path:
-        sys.path.insert(0, parent_dir)
+    # 本地开发环境：使用 FastAPI CLI（它会自动处理包导入和依赖）
+    import subprocess
+    import sys
 
     try:
-        # 导入backend包
-        import backend.main
-        app = backend.main.app
+        # 从项目根目录调用 FastAPI CLI，这样backend包能被正确识别
+        os.chdir(parent_dir)  # 切换到项目根目录
+        cmd = [sys.executable, "-m", "fastapi", "dev", "backend/main.py", "--host", "127.0.0.1", "--port", "8000"]
+        print(f"Running: {' '.join(cmd)}")
+        subprocess.run(cmd)
+        sys.exit(0)
 
-    except ImportError as e:
-        print(f"Local import error: {e}")
+    except KeyboardInterrupt:
+        print("\nServer stopped by user")
+        sys.exit(0)
+    except Exception as e:
+        print(f"Failed to start FastAPI dev server: {e}")
+        print("Make sure you're in the correct directory and have FastAPI installed")
         sys.exit(1)
-
-# 启动服务器
-try:
-    import uvicorn
-
-    if __name__ == "__main__":
-        port = int(os.environ.get("PORT", 8000))
-        uvicorn.run(
-            app,
-            host="0.0.0.0",
-            port=port,
-            log_level="info"
-        )
-except Exception as e:
-    print(f"Server error: {e}")
-    import traceback
-    traceback.print_exc()
-    sys.exit(1)

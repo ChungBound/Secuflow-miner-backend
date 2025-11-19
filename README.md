@@ -48,14 +48,17 @@ python process_git.py ~/test_repo/.git test_repo master
 
 #### 推荐方式（统一启动脚本）：
 ```shell
-# 从后端目录运行 - 自动检测环境
+# 从后端目录运行 - 自动检测环境并使用正确的方式启动
 cd backend/
 python start.py
 ```
+- ✅ 本地开发：自动调用 `fastapi dev`（支持热重载）
+- ✅ Docker 部署：直接使用 uvicorn
+- ✅ 自动处理包导入和依赖问题
 
-#### FastAPI CLI 方式：
+#### 手动 FastAPI CLI 方式：
 ```shell
-# 从项目根目录运行（确保backend包能被正确导入）
+# 从项目根目录运行
 cd secuflow/back-end/
 fastapi dev backend/main.py
 ```
