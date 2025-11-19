@@ -65,10 +65,31 @@ else:
     try:
         # 从项目根目录调用 FastAPI CLI，这样backend包能被正确识别
         os.chdir(parent_dir)  # 切换到项目根目录
-        cmd = [sys.executable, "-m", "fastapi", "dev", "backend/main.py", "--host", "127.0.0.1", "--port", "8000"]
-        print(f"Running: {' '.join(cmd)}")
-        subprocess.run(cmd)
-        sys.exit(0)
+
+        # 优先使用有FastAPI的Python环境
+        python_cmds = [
+            # 首先尝试conda环境（通常有包）
+            ["/Users/zzb/anaconda3/bin/python", "-m", "fastapi", "dev", "backend/main.py", "--host", "127.0.0.1", "--port", "8000"],
+            ["/Users/zzb/anaconda3/bin/python3", "-m", "fastapi", "dev", "backend/main.py", "--host", "127.0.0.1", "--port", "8000"],
+            # 然后尝试当前Python环境
+            [sys.executable, "-m", "fastapi", "dev", "backend/main.py", "--host", "127.0.0.1", "--port", "8000"],
+            # 最后尝试系统Python
+            ["/usr/bin/python3", "-m", "fastapi", "dev", "backend/main.py", "--host", "127.0.0.1", "--port", "8000"],
+            ["python3", "-m", "fastapi", "dev", "backend/main.py", "--host", "127.0.0.1", "--port", "8000"]
+        ]
+
+        for cmd in python_cmds:
+            try:
+                print(f"Trying: {' '.join(cmd)}")
+                result = subprocess.run(cmd, capture_output=False)
+                if result.returncode == 0:
+                    sys.exit(0)
+                break
+            except FileNotFoundError:
+                continue
+        else:
+            print("Error: Could not find Python with FastAPI installed")
+            sys.exit(1)
 
     except KeyboardInterrupt:
         print("\nServer stopped by user")
