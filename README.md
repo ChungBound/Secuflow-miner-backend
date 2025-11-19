@@ -46,9 +46,19 @@ python process_git.py ~/test_repo/.git test_repo master
 
 ### 启动开发服务器
 
+由于项目使用了相对导入，请确保从项目根目录运行：
+
 ```shell
+# 从后端目录运行
+cd backend/
+fastapi dev main.py
+
+# 或者从项目根目录运行
+cd secuflow/back-end/backend/
 fastapi dev main.py
 ```
+
+服务器启动后访问:
 
 服务器启动后访问:
 - API 根路径: http://127.0.0.1:8000/
