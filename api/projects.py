@@ -2,23 +2,13 @@ from fastapi import APIRouter, Query, Depends
 from sqlalchemy.orm import Session
 import json
 
-# Handle both relative and absolute imports
-try:
-    # Try relative imports first (for local development)
-    from .. import database
-    from ..project import Project
-    from ..project_history import ProjectHistory
-    from ..assignment_matrix_miner import AssignmentMatrixMiner
-    from ..changed_files_miner import ChangedFilesMiner
-    from ..file_dependency_matrix_miner import FileDependencyMatrixMiner
-except ImportError:
-    # Fallback to absolute imports (for deployment)
-    import database
-    import project as Project
-    import project_history as ProjectHistory
-    import assignment_matrix_miner as AssignmentMatrixMiner
-    import changed_files_miner as ChangedFilesMiner
-    import file_dependency_matrix_miner as FileDependencyMatrixMiner
+# Use absolute imports for Docker deployment
+import database
+import project as Project
+import project_history as ProjectHistory
+import assignment_matrix_miner as AssignmentMatrixMiner
+import changed_files_miner as ChangedFilesMiner
+import file_dependency_matrix_miner as FileDependencyMatrixMiner
 
 router = APIRouter()
 

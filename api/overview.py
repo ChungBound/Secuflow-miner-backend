@@ -2,17 +2,10 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 
-# Handle both relative and absolute imports
-try:
-    # Try relative imports first (for local development)
-    from .. import database
-    from ..project import Project
-    from ..project_history import ProjectHistory
-except ImportError:
-    # Fallback to absolute imports (for deployment)
-    import database
-    import project as Project
-    import project_history as ProjectHistory
+# Use absolute imports for Docker deployment
+import database
+import project as Project
+import project_history as ProjectHistory
 
 
 
