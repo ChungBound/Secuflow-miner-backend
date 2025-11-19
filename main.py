@@ -1,6 +1,6 @@
-# Use absolute imports for Docker deployment
-import database
-from api import overview_router, project_list_router, project_statistics_router
+# Use relative imports for local development (start.py handles Docker)
+from . import database
+from .api import overview_router, project_list_router, project_statistics_router
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()

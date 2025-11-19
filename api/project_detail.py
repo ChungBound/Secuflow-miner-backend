@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Query, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-# Use absolute imports for Docker deployment
-import database
-import project as Project
-import project_history as ProjectHistory
-import assignment_matrix_miner as AssignmentMatrixMiner
-import changed_files_miner as ChangedFilesMiner
-import file_dependency_matrix_miner as FileDependencyMatrixMiner
+# Use relative imports for local development (start.py handles Docker)
+from .. import database
+from ..project import Project
+from ..project_history import ProjectHistory
+from ..assignment_matrix_miner import AssignmentMatrixMiner
+from ..changed_files_miner import ChangedFilesMiner
+from ..file_dependency_matrix_miner import FileDependencyMatrixMiner
 import json
 import numpy as np
 import pandas as pd
