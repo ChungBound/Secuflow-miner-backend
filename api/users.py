@@ -1,7 +1,15 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from .. import database
-from ..models import user
+
+# Handle both relative and absolute imports
+try:
+    # Try relative imports first (for local development)
+    from .. import database
+    from ..models import user
+except ImportError:
+    # Fallback to absolute imports (for deployment)
+    import database
+    from models import user
 
 router = APIRouter()
 
