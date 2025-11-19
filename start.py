@@ -9,10 +9,18 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 
-# 检测环境：检查是否在Docker中（所有文件在同一级目录）
-is_docker = (os.path.exists(os.path.join(current_dir, 'main.py')) and
-             os.path.exists(os.path.join(current_dir, 'database.py')) and
-             os.path.exists(os.path.join(current_dir, 'api')))
+# 检测环境：检查是否在Docker容器中
+# Docker容器会有特定的环境变量或文件结构
+is_docker = (
+    # 检查Docker环境变量
+    os.path.exists('/.dockerenv') or
+    os.environ.get('DOCKER_CONTAINER') == 'true' or
+    # 检查是否所有文件都在当前目录且没有上级backend包结构
+    (os.path.exists(os.path.join(current_dir, 'main.py')) and
+     os.path.exists(os.path.join(current_dir, 'database.py')) and
+     os.path.exists(os.path.join(current_dir, 'api')) and
+     not os.path.exists(os.path.join(parent_dir, 'backend')))
+)
 
 if is_docker:
     # Docker环境：所有文件在同一级目录，使用绝对导入
@@ -69,3 +77,6 @@ else:
         print(f"Failed to start FastAPI dev server: {e}")
         print("Make sure you're in the correct directory and have FastAPI installed")
         sys.exit(1)
+
+# 注意：启动逻辑在上面的 if/else 分支中处理
+# Docker环境直接运行应用，本地环境调用FastAPI CLI
