@@ -1,7 +1,5 @@
 from fastapi import APIRouter, Query, Depends, HTTPException
 from sqlalchemy.orm import Session
-
-# Use relative imports for local development (start.py handles Docker)
 from .. import database
 from ..project import Project
 from ..project_history import ProjectHistory

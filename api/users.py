@@ -1,9 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-
-# Use relative imports for local development (start.py handles Docker)
 from .. import database
-from ..models import user
 
 router = APIRouter()
 

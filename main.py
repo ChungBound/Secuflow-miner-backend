@@ -1,4 +1,3 @@
-# Use relative imports for local development (start.py handles Docker)
 from . import database
 from .api import overview_router, project_list_router, project_statistics_router
 from fastapi import FastAPI

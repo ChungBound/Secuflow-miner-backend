@@ -1,14 +1,14 @@
 from fastapi import APIRouter, Query, Depends
 from sqlalchemy.orm import Session
-import json
-
-# Use relative imports for local development (start.py handles Docker)
+from sqlalchemy import func, text
+from typing import List, Dict, Any
 from .. import database
 from ..project import Project
 from ..project_history import ProjectHistory
 from ..assignment_matrix_miner import AssignmentMatrixMiner
 from ..changed_files_miner import ChangedFilesMiner
 from ..file_dependency_matrix_miner import FileDependencyMatrixMiner
+import json
 
 router = APIRouter()
 
