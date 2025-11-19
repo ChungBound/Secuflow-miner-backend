@@ -23,6 +23,11 @@ SecuFlow 后端服务 - 基于 FastAPI 的 Git 数据挖掘与分析 API。
 pip install -r requirements.txt
 ```
 
+**注意**：如果使用 `python start.py` 启动，需要确保已安装 FastAPI：
+```shell
+pip install fastapi uvicorn[standard]
+```
+
 ### Git Data Miner
 
 使用 `process_git.py` 处理 Git 仓库数据并计算分析结果。
@@ -48,6 +53,9 @@ python process_git.py ~/test_repo/.git test_repo master
 
 #### 推荐方式（统一启动脚本）：
 ```shell
+# 确保已安装依赖
+pip install -r requirements.txt
+
 # 从后端目录运行 - 自动检测环境并使用正确的方式启动
 cd backend/
 python start.py
