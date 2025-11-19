@@ -46,23 +46,18 @@ python process_git.py ~/test_repo/.git test_repo master
 
 ### 启动开发服务器
 
-#### 推荐方式（使用启动脚本）：
+#### 推荐方式（统一启动脚本）：
 ```shell
-# 从后端目录运行
+# 从后端目录运行 - 自动检测环境
 cd backend/
 python start.py
 ```
 
 #### FastAPI CLI 方式：
-由于项目使用了相对导入，请确保从项目根目录运行：
 ```shell
-# 从后端目录运行
-cd backend/
-fastapi dev main.py
-
-# 或者从项目根目录运行
-cd secuflow/back-end/backend/
-fastapi dev main.py
+# 从项目根目录运行（确保backend包能被正确导入）
+cd secuflow/back-end/
+fastapi dev backend/main.py
 ```
 
 服务器启动后访问:
