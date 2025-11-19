@@ -1,0 +1,206 @@
+commit 45b2badb474bbaeb2878a8b8945f7b82644a3ca3
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Tue Oct 22 11:32:22 2024 +1030
+
+    feat: add mc-stc
+
+commit c587474f3619e366f82e958967a36ae169c7f772
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Tue Oct 22 00:02:31 2024 +1030
+
+    fix: mc-stc
+
+commit 87f18d456a4de9f7bba03e8c841c688cc737fa80
+Author: Gengchao Yang <a1899237@adelaide.edu.au>
+Date:   Mon Oct 21 23:11:07 2024 +1030
+
+    fix: high/low risk issue.
+
+commit 4486f6f47f263233398c1d38803eebfae8a9b96d
+Author: Gengchao Yang <a1899237@adelaide.edu.au>
+Date:   Mon Oct 21 23:08:59 2024 +1030
+
+    fix: Solve high/low risk issue and Ensure all mc_stc and stc_value is properly handled.
+
+commit 3c6be6c06985cd9ac703a11b9508798c5fae3c35
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Mon Oct 21 17:46:43 2024 +1030
+
+    feat: add data
+
+commit d340f782b8c8ae3f6dbdaaa927b6067b601820b5
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Mon Oct 21 17:17:59 2024 +1030
+
+    feat: add dev infos
+
+commit 23520e697334361901b4a20ea113d6a740d312f8
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Mon Oct 21 00:52:09 2024 +1030
+
+    feat: config user emails to generate mc-stc, use stc as a replacement of mc-stc, generate dummy data
+
+commit f8b061900a1153faf4dda364f34c17476430aa4e
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Sat Oct 19 15:27:11 2024 +1030
+
+    feat: add readme
+
+commit d00ced5efdf38ddcfcee67770dad0b5f52ef5b32
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Sat Oct 19 15:21:44 2024 +1030
+
+    feat: add instruction
+
+commit c5ed587cb1d8a57f0cc62db6a42b27777fbde4ed
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Sat Oct 19 15:15:01 2024 +1030
+
+    feat: add cli tool
+
+commit 842c7a541fafdbda0d43eb05234cb8449df362a5
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Sat Oct 19 15:13:33 2024 +1030
+
+    feat: add tnm repo
+
+commit 7cc50a0de0188197728e79d1a87e812bc24d58a9
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Wed Oct 16 21:20:01 2024 +1030
+
+    feat: add security_dev_emails
+
+commit 8ac76892be039ea7179c56022c9660b9eadf4e2e
+Merge: e11d5d9 e1cd0a3
+Author: BunnyZhang <a1904674@adelaide.edu.au>
+Date:   Fri Oct 11 23:13:38 2024 +1030
+
+    Merge remote-tracking branch 'origin/main'
+
+commit e11d5d9131053cecb6c5bea48cdda64e286ea2cd
+Author: BunnyZhang <a1904674@adelaide.edu.au>
+Date:   Fri Oct 11 23:13:30 2024 +1030
+
+    change the api of project_detail.py
+
+commit e1cd0a39e1685614c73c152d557fe4c5967d96b0
+Author: Gengchao Yang <a1899237@adelaide.edu.au>
+Date:   Fri Oct 11 16:12:29 2024 +1030
+
+    fix: projects.status issue
+
+commit 2e09fad7387d75eea1e7a7a157add8f58d7c135c
+Author: Gengchao Yang <a1899237@adelaide.edu.au>
+Date:   Thu Oct 10 15:44:29 2024 +1030
+
+    Revert changes to README.md to previous version
+
+commit ac73736834f769ada652912091c583afd34e72a4
+Author: Gengchao Yang <gengchao.yang@student.adelaide.edu.au>
+Date:   Thu Oct 10 15:22:13 2024 +1030
+
+    fix: corrected return data format
+
+commit d83c8e08ca0f2daf650b8ec5857c5154b02a084d
+Author: Jasminexzm <zhimin.hsu@gmail.com>
+Date:   Thu Oct 10 12:07:06 2024 +1030
+
+    add overview api
+
+commit d7cda6aba409a7a9a66049ea24093764674cf5c4
+Author: Gengchao Yang <cc@Gengchaos-MacBook-Air.local>
+Date:   Thu Oct 10 11:52:27 2024 +1030
+
+    projects_list json (3 variables) completed
+
+commit 21e208259df37b08f80e69230f747acf9a2b9c5c
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 10 11:46:49 2024 +1030
+
+    fix
+
+commit 3157da18a2439f934eb7a20a5a15907731555a9e
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 10 11:46:22 2024 +1030
+
+    fix
+
+commit 80593b13723e2f7e0c89896425d17b3a23991ec3
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 10 11:41:07 2024 +1030
+
+    fix
+
+commit f6d2d3a45c3b5dd3628091b6e159a1c7e52c6213
+Merge: 92d4d46 dac5fd4
+Author: Jasminexzm <zhimin.hsu@gmail.com>
+Date:   Thu Oct 10 11:33:20 2024 +1030
+
+    Merge branch 'main' of https://github.cs.adelaide.edu.au/SecuFlow-PG1/backend
+
+commit dac5fd403eaa193a6a9b9a151c3171eb057f7f58
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 10 11:31:29 2024 +1030
+
+    feat: add project details
+
+commit 282d4af615420161349d37ddf8f6413e61320cd7
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 10 11:27:00 2024 +1030
+
+    feat: add data
+
+commit af5e6aa8c3df1abd6a9f26c64270b1d739b3a51b
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 10 11:22:33 2024 +1030
+
+    feat: add project
+
+commit 92d4d46600d4da3d3aff7b367af0b84993e70144
+Merge: 913cd45 98e75ec
+Author: Jasminexzm <zhimin.hsu@gmail.com>
+Date:   Wed Oct 9 23:15:18 2024 +1030
+
+    Merge branch 'main' of https://github.cs.adelaide.edu.au/SecuFlow-PG1/backend
+
+commit 913cd457a10252a0b6fa3e864f770aa8c31ea432
+Author: Jasminexzm <zhimin.hsu@gmail.com>
+Date:   Wed Oct 9 23:07:47 2024 +1030
+
+    add overview api
+
+commit 98e75ecf942aeeb6793172b0df7c576cf752f936
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Wed Oct 9 22:19:10 2024 +1030
+
+    feat: add all api
+
+commit 201c0dab0cbe146e47e3a23d19c2b2fff5982143
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 3 14:31:26 2024 +0930
+
+    api
+
+commit e1d174a84aeb388bda290a93cee004043030434c
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 3 14:30:55 2024 +0930
+
+    api
+
+commit 325e174b05ce3f8bf0e8cc0782ccce0d454c7f9d
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 3 14:12:21 2024 +0930
+
+    add notes
+
+commit 491dd68d7c20dcd314af79883eea56a3e23c5f0e
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 3 14:06:59 2024 +0930
+
+    fix
+
+commit 5798731de58f7c0831ab9dfce53e912567dacbcf
+Author: Daqi Song <dqaria@gmail.com>
+Date:   Thu Oct 3 13:07:53 2024 +0930
+
+    init
